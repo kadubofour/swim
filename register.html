@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register | Swim Program</title><meta name="description" content="Swim lessons and training programs. Register online.">
+<link rel="stylesheet" href="assets/style.css"></head>
+<body data-page="register"><div id="site-header"></div>
+<section><div class="wrap"><h2>Register</h2><p class="lead">Fill in the form and send it to us. We will confirm your spot.</p>
+<form id="reg-form"><label>Program<select id="program" name="program" required></select></label>
+<div class="row"><label>Swimmer name<input name="swimmer" required></label><label>Swimmer age<input name="age" type="number" min="3" max="99" required></label></div>
+<label>Swimming level<select name="level" required><option>Never swum</option><option>Can float / basic</option><option>Comfortable in water</option><option>Competitive</option></select></label>
+<div class="row"><label>Parent / guardian<input name="parent" required></label><label>Phone<input name="phone" type="tel" required></label></div>
+<label>Email<input name="email" type="email" required></label>
+<label>Emergency contact (name &amp; phone)<input name="emergency" required></label>
+<label>Medical notes / allergies (optional)<textarea name="medical" rows="3"></textarea></label>
+<label class="check"><input type="checkbox" required><span>I accept the liability waiver and confirm the details above are correct. (Placeholder: add waiver text, have it reviewed.)</span></label>
+<p class="note">Submitting opens a prefilled message to us. Just press send. Payment details will be shared once your spot is confirmed.</p>
+<button class="btn" type="submit">Submit registration</button></form>
+<p id="done" class="note" hidden>If nothing opened, <a id="done-link" href="#">tap here to send your registration</a>.</p></div></section>
+<div id="site-footer"></div>
+<script src="site.config.js"></script><script src="assets/main.js"></script></body></html>
