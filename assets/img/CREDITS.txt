@@ -1,0 +1,9 @@
+Stock photos from Pexels (https://www.pexels.com), free to use under the Pexels License (attribution not required).
+hero.jpg    pexels.com/photo/8688569
+learn.jpg   pexels.com/photo/346780  (Porapak Apichodilok)
+strokes.jpg pexels.com/photo/8688559
+team.jpg    pexels.com/photo/8688566
+adult.jpg   pexels.com/photo/8688158
+lanes.jpg   pexels.com/photo/8688610
+kids.jpg    pexels.com/photo/12615996
+Replace with your own photos of your pool and swimmers when you have them (same filenames work).

@@ -18,16 +18,16 @@ window.SITE = {
 
   currency: "GHS",
   programs: [                            // PLACEHOLDERS
-    { id: "learn", name: "Learn to Swim", ages: "4-8 yrs", level: "Beginner",
+    { id: "learn", img: "assets/img/learn.jpg", name: "Learn to Swim", ages: "4-8 yrs", level: "Beginner",
       desc: "Water safety, breathing and floating in small, friendly groups.",
       schedule: "Sat 9:00-10:00", price: 300, spots: 8 },
-    { id: "strokes", name: "Stroke Development", ages: "8-14 yrs", level: "Intermediate",
+    { id: "strokes", img: "assets/img/strokes.jpg", name: "Stroke Development", ages: "8-14 yrs", level: "Intermediate",
       desc: "Freestyle, backstroke, breaststroke and butterfly technique.",
       schedule: "Sat 10:00-11:00", price: 350, spots: 10 },
-    { id: "team", name: "Swim Team", ages: "10-17 yrs", level: "Advanced",
+    { id: "team", img: "assets/img/team.jpg", name: "Swim Team", ages: "10-17 yrs", level: "Advanced",
       desc: "Training for meets: endurance, starts, turns and race strategy.",
       schedule: "Tue & Thu 17:00-18:30", price: 500, spots: 12 },
-    { id: "adult", name: "Adult Lessons", ages: "18+", level: "All levels",
+    { id: "adult", img: "assets/img/adult.jpg", name: "Adult Lessons", ages: "18+", level: "All levels",
       desc: "Never too late. Private-feel lessons at your own pace.",
       schedule: "Wed 18:00-19:00", price: 350, spots: 6 }
   ]

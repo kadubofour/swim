@@ -24,7 +24,7 @@ function page(string $title, string $body): void {
        . '<style>.wrap{max-width:1200px}.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}'
        . 'table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}'
        . 'th{background:var(--aqua);white-space:nowrap}.bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}.bar input,.bar select{width:auto}'
-       . '.err{background:#fde8e8;color:#8a1c1c;border-radius:10px;padding:10px 14px}</style></head><body><section><div class="wrap">'
+       . '.tag{background:var(--aqua);color:var(--navy2);border-color:var(--line);backdrop-filter:none;margin:0 6px 6px 0}.err{background:#fde8e8;color:#8a1c1c;border-radius:10px;padding:10px 14px}</style></head><body><section><div class="wrap">'
        . $body . '</div></section></body></html>';
     exit;
 }
@@ -110,8 +110,8 @@ foreach ($rows as $r) { $p = $r[$col['program'] ?? 1] ?? ''; $counts[$p] = ($cou
 ksort($counts);
 
 $body = '<div class="bar"><h2 style="margin:0;flex:1">Registrations (' . count($rows) . ')</h2>'
-      . ($rows ? '<a class="btn alt" href="admin.php?download=1">Download CSV</a>' : '')
-      . '<form method="post" style="display:block"><input type="hidden" name="csrf" value="' . $h($_SESSION['csrf']) . '"><input type="hidden" name="action" value="logout"><button class="btn alt" type="submit">Log out</button></form></div>';
+      . ($rows ? '<a class="btn alt on-light" href="admin.php?download=1">Download CSV</a>' : '')
+      . '<form method="post" style="display:block"><input type="hidden" name="csrf" value="' . $h($_SESSION['csrf']) . '"><input type="hidden" name="action" value="logout"><button class="btn alt on-light" type="submit">Log out</button></form></div>';
 
 if (!$rows) {
     $body .= '<p class="note">No registrations yet.</p>';

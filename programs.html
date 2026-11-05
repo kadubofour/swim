@@ -1,8 +1,14 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Programs & Schedule | Swim Program</title><meta name="description" content="Swim lessons and training programs. Register online.">
-<link rel="stylesheet" href="assets/style.css"></head>
+<title>Programs & Schedule | Swim Program</title><meta name="description" content="Swim programs for every age and level, with schedules and pricing."><meta name="theme-color" content="#06182b">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css"></head>
 <body data-page="programs"><div id="site-header"></div>
-<section><div class="wrap"><h2>Programs, schedule &amp; pricing</h2><p class="lead">Prices are per term. Placeholder values, so edit them in site.config.js.</p><div class="grid" id="program-list"></div></div></section>
+<main id="main">
+<div class="hero page" data-bg="assets/img/strokes.jpg"><div class="wrap inner"><div class="kicker">Programs</div><h1>Find your lane</h1><p class=sub>Prices are per term. Placeholder values, so edit them in site.config.js.</p></div></div>
+<section><div class="wrap"><div class="eyebrow">All programs</div><h2>Choose your program</h2><div class="cards" id="program-list"></div></div></section>
+<section class="tint"><div class="wrap"><div class="eyebrow">At a glance</div><h2>Schedule &amp; pricing</h2>
+<div class="tw" style="background:#fff"><table><thead><tr><th>Program</th><th>Ages</th><th>Level</th><th>When</th><th>Price</th></tr></thead><tbody id="schedule-body"></tbody></table></div></div></section>
+<div class="band" data-bg="assets/img/lanes.jpg"><div class="wrap"><h2>Your lane is waiting</h2><a class="btn" href="register.html">Register now</a></div></div>
+</main>
 <div id="site-footer"></div>
 <script src="site.config.js"></script><script src="assets/main.js"></script></body></html>
