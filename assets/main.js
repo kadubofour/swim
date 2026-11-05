@@ -25,12 +25,11 @@
   var list = document.getElementById("program-list");
   if(list) list.innerHTML = S.programs.map(function(p){
     return '<a class="pc rv" href="register.html?program='+p.id+'"><img src="'+p.img+'" alt="" loading="lazy">'+
-      '<div class="tags"><span class="tag">'+esc(p.ages)+'</span><span class="tag">'+esc(p.level)+'</span></div>'+
-      '<div class="body"><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><div class="meta">'+esc(p.schedule)+' · up to '+p.spots+' swimmers</div>'+
+      '<div class="body"><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><div class="meta">'+esc(p.schedule)+'</div>'+
       '<div class="row"><span class="price">'+money(p.price)+'</span><span class="go">Register</span></div></div></a>'}).join("");
   var tb = document.getElementById("schedule-body");
   if(tb) tb.innerHTML = S.programs.map(function(p){
-    return '<tr><td><strong>'+esc(p.name)+'</strong></td><td>'+esc(p.ages)+'</td><td>'+esc(p.level)+'</td><td>'+esc(p.schedule)+'</td><td class="p">'+money(p.price)+'</td></tr>'}).join("");
+    return '<tr><td><strong>'+esc(p.name)+'</strong></td><td>'+esc(p.schedule)+'</td><td class="p">'+money(p.price)+'</td></tr>'}).join("");
 
   if("IntersectionObserver" in window){
     var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
@@ -39,15 +38,15 @@
 
   var sel = document.getElementById("program");
   if(sel){
-    sel.innerHTML = '<option value="">Choose a program…</option>'+S.programs.map(function(p){
-      return '<option value="'+p.id+'">'+esc(p.name)+' ('+esc(p.ages)+') - '+money(p.price)+' - '+esc(p.schedule)+'</option>'}).join("");
+    sel.innerHTML = '<option value="">Choose a level…</option>'+S.programs.map(function(p){
+      return '<option value="'+p.id+'">'+esc(p.name)+' - '+money(p.price)+' - '+esc(p.schedule)+'</option>'}).join("");
     var q = new URLSearchParams(location.search).get("program"); if(q) sel.value = q;
     var f = document.getElementById("reg-form");
     f.addEventListener("submit", function(e){
       e.preventDefault();
       var d = Object.fromEntries(new FormData(f)), p = S.programs.find(function(x){return x.id===d.program});
       var msg = ["New swim registration","Program: "+p.name+" ("+p.schedule+") - "+money(p.price),
-        "Swimmer: "+d.swimmer+", age "+d.age,"Swimming level: "+d.level,
+        "Swimmer: "+d.swimmer+", age "+d.age,
         "Parent/guardian: "+d.parent,"Phone: "+d.phone,"Email: "+d.email,
         "Emergency contact: "+d.emergency,"Medical notes: "+(d.medical||"None"),
         "Waiver accepted: yes"].join("\n");

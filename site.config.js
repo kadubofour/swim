@@ -1,6 +1,6 @@
 // Edit this file to change content site-wide. Everything marked PLACEHOLDER should be replaced.
 window.SITE = {
-  name: "Your Swim Program",            // PLACEHOLDER
+  name: "PrinceSwim",
   tagline: "Confidence in the water, for every age.",
   location: "Pool name, City",          // PLACEHOLDER
   phone: "+233 00 000 0000",            // PLACEHOLDER
@@ -17,18 +17,15 @@ window.SITE = {
   payment: { enabled: false, provider: "paystack", publicKey: "", currency: "GHS" },
 
   currency: "GHS",
-  programs: [                            // PLACEHOLDERS
-    { id: "learn", img: "assets/img/learn.jpg", name: "Learn to Swim", ages: "4-8 yrs", level: "Beginner",
-      desc: "Water safety, breathing and floating in small, friendly groups.",
-      schedule: "Sat 9:00-10:00", price: 300, spots: 8 },
-    { id: "strokes", img: "assets/img/strokes.jpg", name: "Stroke Development", ages: "8-14 yrs", level: "Intermediate",
-      desc: "Freestyle, backstroke, breaststroke and butterfly technique.",
-      schedule: "Sat 10:00-11:00", price: 350, spots: 10 },
-    { id: "team", img: "assets/img/team.jpg", name: "Swim Team", ages: "10-17 yrs", level: "Advanced",
-      desc: "Training for meets: endurance, starts, turns and race strategy.",
-      schedule: "Tue & Thu 17:00-18:30", price: 500, spots: 12 },
-    { id: "adult", img: "assets/img/adult.jpg", name: "Adult Lessons", ages: "18+", level: "All levels",
-      desc: "Never too late. Private-feel lessons at your own pace.",
-      schedule: "Wed 18:00-19:00", price: 350, spots: 6 }
+  programs: [                            // PLACEHOLDERS: edit descriptions, times and prices
+    { id: "beginner", img: "assets/img/learn.jpg", name: "Beginner",
+      desc: "Water confidence, breathing, floating and first strokes in a friendly, safe setting.",
+      schedule: "Sat 9:00-10:00", price: 300 },
+    { id: "intermediate", img: "assets/img/strokes.jpg", name: "Intermediate",
+      desc: "Build technique across freestyle, backstroke, breaststroke and butterfly.",
+      schedule: "Sat 10:00-11:00", price: 350 },
+    { id: "advanced", img: "assets/img/team.jpg", name: "Advanced",
+      desc: "Endurance, starts, turns and race strategy for confident, competitive swimmers.",
+      schedule: "Tue & Thu 17:00-18:30", price: 500 }
   ]
 };

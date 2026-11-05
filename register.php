@@ -29,7 +29,6 @@ $d = [
     'program'   => field('program', 40),
     'swimmer'   => field('swimmer', 100),
     'age'       => field('age', 3),
-    'level'     => field('level', 60),
     'parent'    => field('parent', 100),
     'phone'     => field('phone', 30),
     'email'     => field('email', 120),
@@ -37,7 +36,7 @@ $d = [
     'medical'   => field('medical', 1000),
 ];
 
-foreach (['program','swimmer','age','level','parent','phone','email','emergency'] as $req) {
+foreach (['program','swimmer','age','parent','phone','email','emergency'] as $req) {
     if ($d[$req] === '') fail(422, "Missing field: $req");
 }
 if (!preg_match('/^[a-z0-9_-]+$/i', $d['program'])) fail(422, 'Invalid program');
@@ -58,7 +57,7 @@ $new = !file_exists($file);
 $fh = fopen($file, 'ab');
 if (!$fh || !flock($fh, LOCK_EX)) fail(500, 'Could not save');
 
-if ($new) fputcsv($fh, ['received_at','program','swimmer','age','level','parent','phone','email','emergency','medical','waiver','ip'], ',', '"', '');
+if ($new) fputcsv($fh, ['received_at','program','swimmer','age','parent','phone','email','emergency','medical','waiver','ip'], ',', '"', '');
 fputcsv($fh, array_merge(
     [gmdate('Y-m-d H:i:s') . ' UTC'],
     array_map($safe, array_values($d)),
