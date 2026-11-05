@@ -33,13 +33,30 @@
         "Parent/guardian: "+d.parent,"Phone: "+d.phone,"Email: "+d.email,
         "Emergency contact: "+d.emergency,"Medical notes: "+(d.medical||"None"),
         "Waiver accepted: yes"].join("\n");
-      if(S.payment.enabled){ /* Paystack hook: open checkout here, then send msg on success */ }
+      if(S.payment.enabled){ /* Paystack hook: open checkout here, then save + send on success */ }
       var url = S.registration.mode==="email"
         ? "mailto:"+S.email+"?subject="+encodeURIComponent("Swim registration: "+d.swimmer)+"&body="+encodeURIComponent(msg)
         : "https://wa.me/"+S.whatsapp+"?text="+encodeURIComponent(msg);
-      document.getElementById("done").hidden = false;
-      document.getElementById("done-link").href = url;
-      location.href = url;
+      var st = document.getElementById("status"), btn = f.querySelector("button[type=submit]");
+      var notify = function(){
+        document.getElementById("done").hidden = false;
+        document.getElementById("done-link").href = url;
+        location.href = url;
+      };
+      if(!S.registration.save){ notify(); return; }
+      btn.disabled = true; st.hidden = false; st.textContent = "Saving your registration…";
+      fetch(S.registration.save, {method:"POST", body:new FormData(f)})
+        .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok, j:j}})})
+        .then(function(res){
+          if(!res.ok) throw new Error(res.j.error||"Could not save");
+          st.textContent = "Registration saved. Now send us the message that opens so we can confirm your spot.";
+          notify();
+        })
+        .catch(function(err){
+          btn.disabled = false;
+          st.textContent = "We couldn't save your registration automatically ("+err.message+"). Please send it to us directly with the link below.";
+          notify();
+        });
     });
   }
 })();

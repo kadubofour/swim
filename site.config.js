@@ -10,7 +10,8 @@ window.SITE = {
   // How registrations reach you:
   //  "whatsapp" -> opens WhatsApp with a prefilled message
   //  "email"    -> opens the visitor's email app with a prefilled message
-  registration: { mode: "whatsapp" },
+  // Either way, the registration is also saved to data/registrations.csv by register.php.
+  registration: { mode: "whatsapp", save: "register.php" },  // save: set to null to skip saving to the server
 
   // Payment is OFF for now. To add Paystack later, set enabled: true and fill in the key.
   payment: { enabled: false, provider: "paystack", publicKey: "", currency: "GHS" },
